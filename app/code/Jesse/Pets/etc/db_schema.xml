@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="jesse_pets" resource="default" engine="innodb" comment="Pets of Jesse Tran">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="bigint" name="pets_id" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Pets ID"/>
+        <column xsi:type="varchar" name="species" nullable="true" length="20" comment="Species"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="20" comment="Name"/>
+        <column xsi:type="smallint" name="age" padding="3" unsigned="true" nullable="true" identity="false"
+                comment="Age"/>
+        <column xsi:type="date" name="birthday" nullable="true" comment="Birthday"/>
+        <column xsi:type="float" name="weight" unsigned="true" nullable="true" precision="5" scale="2"/>
+        <column xsi:type="text" name="description" nullable="true"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" on_update="false" default="CURRENT_TIMESTAMP" comment="Time of event"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" on_update="true" default="CURRENT_TIMESTAMP" comment="Time of event"/>
+        <constraint xsi:type="unique" referenceId="JESSE_PETS_ENTITY_ID_PETS_ID">
+            <column name="entity_id"/>
+            <column name="pets_id"/>
+        </constraint>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="JESSE_PETS_ENTITY_ID" indexType="btree">
+            <column name="entity_id"/>
+        </index>
+        <index referenceId="JESSE_PETS_PETS_ID" indexType="btree">
+            <column name="pets_id"/>
+        </index>
+    </table>
+</schema>

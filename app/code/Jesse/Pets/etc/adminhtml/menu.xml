@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Jesse_Pets::management" title="Jesse" translate="title" module="Jesse_Pets" sortOrder="15"
+             dependsOnModule="Jesse_Pets" resource="Jesse_Pets::jesse_pets"/>
+        <add id="Jesse_Pets::management_list" sortOrder="10" title="Jesse Pets Management" module="Jesse_Pets"
+             parent="Jesse_Pets::management" resource="Jesse_Pets::management_list" translate="title"
+             action="jesse_pets/jessepets/index"/>
+    </menu>
+</config>

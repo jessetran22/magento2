@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">jesse_pets_form.jesse_pets_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Jesse Pets Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>jesse_pets_form</namespace>
+        <dataScope>data.general</dataScope>
+        <deps>
+            <dep>jesse_pets_form.jesse_pets_form_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="save" class="Jesse\Pets\Block\Form\JessePets\Save"/>
+            <button name="back" class="Jesse\Pets\Block\Form\JessePets\Back"/>
+            <button name="delete" class="Jesse\Pets\Block\Form\JessePets\Delete"/>
+        </buttons>
+    </settings>
+    <dataSource name="jesse_pets_form_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="jesse_pets/jessepets/save"/>
+        </settings>
+        <dataProvider class="Jesse\Pets\Ui\DataProvider\JessePetsDataProvider" name="jesse_pets_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label translate="true">General</label>
+        </settings>
+        <field name="entity_id" sortOrder="0" formElement="hidden">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Entity ID</label>
+                <dataScope>entity_id</dataScope>
+            </settings>
+        </field>
+        <field name="pets_id" sortOrder="00" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">pets_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>int</dataType>
+                <label translate="true">Pets Id</label>
+                <dataScope>pets_id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">name</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="species" sortOrder="15" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">species</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Species</label>
+                <dataScope>species</dataScope>
+            </settings>
+        </field>
+        <field name="age" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">age</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>int</dataType>
+                <label translate="true">Age</label>
+                <dataScope>age</dataScope>
+            </settings>
+        </field>
+        <field name="birthday" formElement="date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">birthday</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="validate-date" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Birthday</label>
+                <visible>true</visible>
+                <dataScope>birthday</dataScope>
+            </settings>
+        </field>
+        <field name="weight" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">weight</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>float</dataType>
+                <label translate="true">Weight</label>
+                <dataScope>weight</dataScope>
+            </settings>
+        </field>
+        <field name="description" sortOrder="50" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">description</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Description</label>
+                <dataScope>description</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

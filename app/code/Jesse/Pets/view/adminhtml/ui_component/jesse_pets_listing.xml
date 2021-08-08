@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">jesse_pets_listing.jesse_pets_listing_data_source</item>
+            <item name="deps" xsi:type="string">jesse_pets_listing.jesse_pets_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New</label>
+            </button>
+        </buttons>
+        <spinner>jesse_pets_listing_columns</spinner>
+        <deps>
+            <dep>jesse_pets_listing.jesse_pets_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="jesse_pets_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Jesse_Pets::management</aclResource>
+        <dataProvider class="Jesse\Pets\Ui\DataProvider\JessePetsDataProvider" name="jesse_pets_listing_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="jesse_pets_listing_columns">
+        <column name="entity_id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="pets_id" sortOrder="20">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Pets Id</label>
+            </settings>
+        </column>
+        <column name="species" sortOrder="40" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <filter>select</filter>
+                <options class="Jesse\Pets\Ui\Component\Listing\Column\Species\Options"/>
+                <dataType>select</dataType>
+                <label translate="true">Species</label>
+            </settings>
+        </column>
+        <column name="name" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="age" sortOrder="50">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Age</label>
+            </settings>
+        </column>
+        <column name="birthday" sortOrder="60" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Birthday</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="weight" sortOrder="70">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Weight</label>
+            </settings>
+        </column>
+        <column name="description" sortOrder="80">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description</label>
+            </settings>
+        </column>
+        <column name="created_at" sortOrder="90" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Created At</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="updated_at" sortOrder="100" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Updated At</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <actionsColumn name="actions" sortOrder="1000" class="Jesse\Pets\Ui\Component\Listing\Column\JessePetsBlockActions">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>
