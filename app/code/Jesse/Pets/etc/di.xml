@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Jesse\Pets\Api\Data\JessePetsInterface" type="Jesse\Pets\Model\Data\JessePetsData"/>
+    <preference for="Jesse\Pets\Api\Data\JessePetsInterface" type="Jesse\Pets\Model\Data\JessePets"/>
+    <preference for="Jesse\Pets\Api\Data\JessePetsSearchResultsInterface" type="Jesse\Pets\Model\Data\JessePetsSearchResults"/>
+    <preference for="Jesse\Pets\Api\JessePetsRepositoryInterface" type="Jesse\Pets\Model\JessePetsRepository"/>
 </config>

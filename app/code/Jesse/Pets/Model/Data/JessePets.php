@@ -5,7 +5,7 @@ namespace Jesse\Pets\Model\Data;
 use Jesse\Pets\Api\Data\JessePetsInterface;
 use Magento\Framework\DataObject;
 
-class JessePetsData extends DataObject implements JessePetsInterface
+class JessePets extends DataObject implements JessePetsInterface
 {
     /**
      * @inheritDoc

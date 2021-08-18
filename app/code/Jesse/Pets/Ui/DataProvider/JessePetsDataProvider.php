@@ -74,7 +74,7 @@ class JessePetsDataProvider extends DataProvider
     /**
      * @inheritDoc
      */
-    public function getSearchResult()
+    public function getSearchResult(): \Magento\Framework\Api\Search\SearchResultInterface
     {
         $searchCriteria = $this->getSearchCriteria();
         $result = $this->getListQuery->execute($searchCriteria);
