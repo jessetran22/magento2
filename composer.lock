@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebdb58747a71078cfbcba5524b46599b",
+    "content-hash": "c9f4f182184e70ae56c9b4d25c9c1340",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -11345,6 +11345,66 @@
                 "source": "https://github.com/php-fig/cache/tree/master"
             },
             "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
+            "name": "reach-digital/magento2-test-framework",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ho-nl/magento2-ReachDigital_TestFramework.git",
+                "reference": "bbe43993c197080c3db7b27bd5c289ba3135448a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ho-nl/magento2-ReachDigital_TestFramework/zipball/bbe43993c197080c3db7b27bd5c289ba3135448a",
+                "reference": "bbe43993c197080c3db7b27bd5c289ba3135448a",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "~100.1.0||~101.0.0||~102.0.0||~103.0.0"
+            },
+            "type": "magento2-component",
+            "extra": {
+                "map": [
+                    [
+                        "etc",
+                        "dev/tests/quick-integration/etc"
+                    ],
+                    [
+                        "framework",
+                        "dev/tests/quick-integration/framework"
+                    ],
+                    [
+                        "phpunit.xml.dist",
+                        "dev/tests/quick-integration/phpunit.xml.dist"
+                    ],
+                    [
+                        "README.md",
+                        "dev/tests/quick-integration/README.md"
+                    ]
+                ],
+                "chmod": [
+                    {
+                        "mask": "0755",
+                        "path": "bin/magento"
+                    }
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Hachmang",
+                    "email": "paul@reachdigital.nl"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ho-nl/magento2-ReachDigital_TestFramework/issues",
+                "source": "https://github.com/ho-nl/magento2-ReachDigital_TestFramework/tree/v1.4.0"
+            },
+            "time": "2020-11-24T09:56:30+00:00"
         },
         {
             "name": "sebastian/cli-parser",
